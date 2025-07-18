@@ -86,18 +86,23 @@ const Home = () => {
 	<div>{datos.length === 1 ? "1 tarea" : `${datos.length} tareas`}</div>
 
 		<button className="btn btn-success mt-3"
-		onClick={() => {
-			Promise.all( //ejecucion de varias promesas al tiempo
-				datos.map(item =>
-					fetch(`https://playground.4geeks.com/todo/todos/${item.id}`, {
-						method: "DELETE"
-					})
-				)
-			). then(() => setDatos ([])); //borra tareas de la pantalla tambien 
-		}}
-		>
-		Borrar tareas
-		</button>
+  onClick={async () => {
+    try {
+      await Promise.all( // espera que todas las tareas sean borradas
+        datos.map(item =>
+          fetch(`https://playground.4geeks.com/todo/todos/${item.id}`, {
+            method: "DELETE"
+          })
+        )
+      );
+      setDatos([]); // borra tareas de la pantalla también
+    } catch (error) {
+      console.error("Error al borrar todas las tareas:", error);
+    }
+  }}
+>
+  Borrar tareas
+</button>
 	</div> // o colocamoss en vez de ${datos.lenght} tareas por elemento "s" como texto condicional para mostrar cuando hay mas de 1 item
   );
 };
