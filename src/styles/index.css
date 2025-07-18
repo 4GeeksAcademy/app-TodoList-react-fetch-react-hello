@@ -9,3 +9,57 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body{
+    margin-top: 100px;
+}
+ul{
+    padding: 0;
+    margin-bottom: 0;
+}
+ul li{
+    border: 1px solid gray;
+    list-style: none;
+    padding: 5px;
+}
+h1{ text-align: center; }
+input { border: none; width: 100%;}
+/* From Uiverse.io by Kabak */ 
+button {
+  height: 50px;
+  width: 120px;
+  margin: 5px;
+  font-size: 16px;
+  font-family: Consolas, Courier New, monospace;
+  color: white;
+  background: linear-gradient(145deg, #1e6f2d, #1a5c26);
+  border: 1px solid #4caf50;
+  border-radius: 5px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 500ms;
+  box-shadow:
+    -2px -2px 5px #2e9b4d,
+    2px 2px 5px #134a1e,
+    inset 2px 2px 4px #0f3d19,
+    inset -2px -2px 4px #23733a;
+}
+
+button:hover {
+  background: linear-gradient(145deg, #228f36, #1d7b2e);
+  box-shadow:
+    0px 0px 12px #3ff075,
+    0px 0px 5px #134a1e;
+  transition: 200ms;
+}
+
+button:active {
+  background: linear-gradient(145deg, #195724, #14461d);
+  box-shadow:
+    inset 1px 1px 6px #0f3d19,
+    inset -1px -1px 6px #23733a;
+  transition: 100ms;
+}
